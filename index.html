@@ -2,5 +2,74 @@
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Belina Delivery Express</title><style>
 body{margin:0;font-family:Arial;background:#eef3f8}header{background:#003b7a;color:#fff;padding:20px;text-align:center}.hero{background:#0b5ed7;color:#fff;padding:40px;text-align:center}.container{max-width:900px;margin:auto;padding:20px}.track-box,#result{background:#fff;padding:20px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.15)}#result{display:none;margin-top:20px}input,button{width:100%;padding:14px;margin-top:10px;font-size:16px}button{background:#0b5ed7;color:#fff;border:none;border-radius:8px}footer{margin-top:40px;background:#003b7a;color:#fff;text-align:center;padding:20px}
 </style></head><body><header><h1>Belina Delivery Express</h1><p>Professional Worldwide Courier & Logistics</p></header><section class='hero'><h2>Track Your Shipment</h2><p>Fast • Secure • Worldwide Delivery</p></section><div class='container'><div class='track-box'><input id='trackingInput' placeholder='Enter Tracking Number'><button onclick='trackPackage()'>Track Package</button></div><div id='result'><h2>Shipment Details</h2><p><b>Tracking Number:</b> <span id='trackingNo'></span></p><p><b>Status:</b> In Transit</p><p><b>Sender:</b> Belina Delivery Express</p><p><b>Receiver:</b> Siti Aminah Fitriana</p><p><b>Origin:</b> London, United Kingdom</p><p><b>Current Location:</b> Singapore Distribution Center</p><p><b>Destination:</b> Jakarta, Indonesia</p><p><b>Estimated Delivery:</b> June 30, 2026</p></div></div><footer>© 2019–2026 Belina Delivery Express. All Rights Reserved.</footer><script>
-function trackPackage(){const code=document.getElementById('trackingInput').value.trim().toUpperCase();if(code===''){alert('Please enter a tracking number.');return;}if(code==='BEL20260001'){document.getElementById('trackingNo').textContent=code;document.getElementById('result').style.display='block';}else{document.getElementById('result').style.display='none';alert('Tracking number not found.');}}
+function trackPackage(){const code = document.getElementById("trackingInput").value.trim().toUpperCase();
+
+const shipments = {
+
+"BEL20260001": {
+receiver: "Siti Aminah Fitriana",
+origin: "London, United Kingdom",
+location: "Singapore Distribution Center",
+destination: "Jakarta, Indonesia",
+status: "In Transit",
+delivery: "June 30, 2026"
+},
+
+"BEL20260002": {
+receiver: "John Smith",
+origin: "New York, USA",
+location: "Dubai Hub",
+destination: "Lagos, Nigeria",
+status: "In Transit",
+delivery: "July 2, 2026"
+},
+
+"BEL20260003": {
+receiver: "Maria Garcia",
+origin: "Madrid, Spain",
+location: "Paris Hub",
+destination: "Berlin, Germany",
+status: "In Transit",
+delivery: "June 29, 2026"
+}
+
+};
+
+if (shipments[code]) {
+
+const s = shipments[code];
+
+document.getElementById("trackingNo").textContent = code;
+
+document.getElementById("result").innerHTML = `
+<h2>Shipment Details</h2>
+
+<p><strong>Tracking Number:</strong> ${code}</p>
+
+<p><strong>Status:</strong> ${s.status}</p>
+
+<p><strong>Sender:</strong> Belina Delivery Express</p>
+
+<p><strong>Receiver:</strong> ${s.receiver}</p>
+
+<p><strong>Origin:</strong> ${s.origin}</p>
+
+<p><strong>Current Location:</strong> ${s.location}</p>
+
+<p><strong>Destination:</strong> ${s.destination}</p>
+
+<p><strong>Estimated Delivery:</strong> ${s.delivery}</p>
+`;
+
+document.getElementById("result").style.display = "block";
+
+} else {
+
+document.getElementById("result").style.display = "none";
+
+alert("Tracking number not found.");
+
+}
+
+  }
 </script></body></html>
