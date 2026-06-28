@@ -84,6 +84,97 @@ margin-top:50px;
 <input type="text" placeholder="Enter Tracking Number">
 <button>Track Package</button>
 </div>
+<div id="result" style="display:none; margin-top:20px; background:#fff; padding:20px; border-radius:10px;">
+<h3>Shipment Details</h3>
+
+<p><strong>Tracking Number:</strong> <span id="trackingNo"></span></p>
+
+<p><strong>Status:</strong> In Transit</p>
+
+<p><strong>Sender:</strong> Belina Delivery Express</p>
+
+<p><strong>Current Location:</strong> Singapore Distribution Center</p>
+
+<p><strong>Destination:</strong> Jakarta, Indonesia</p>
+
+<p><strong>Estimated Delivery:</strong> June 30, 2026</p>
+</div>
+</section>
+
+<footer>
+
+<p>Head Office: London, England</p>
+
+<p>Open 24 Hours • 7 Days a Week</p>
+
+<p>© 2019–2026 Belina Delivery Express. All Rights Reserved.</p>
+
+</footer>
+<script>
+document.querySelector("button").addEventListener("click", function () {
+  const trackingNumber = document.querySelector("input").value.trim();
+
+  if (trackingNumber === "") {
+    alert("Please enter your tracking number.");
+    return;
+  }
+
+  document.getElementById("trackingNo").textContent = trackingNumber;
+document.getElementById("result").style.display = "block";
+});
+</script>
+</body>
+  </html>
+padding:25px;
+max-width:500px;
+margin:30px auto;
+border-radius:12px;
+box-shadow:0 0 15px rgba(0,0,0,.15);
+}
+
+.track-box input{
+width:100%;
+padding:15px;
+font-size:18px;
+margin-bottom:15px;
+}
+
+.track-box button{
+width:100%;
+padding:15px;
+background:#0b5ed7;
+color:white;
+border:none;
+font-size:18px;
+cursor:pointer;
+border-radius:8px;
+}
+
+footer{
+background:#003366;
+color:white;
+padding:20px;
+text-align:center;
+margin-top:50px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>Belina Delivery Express</h2>
+<p>Professional Worldwide Courier & Logistics</p>
+</header>
+
+<section class="hero">
+<h1>Track Your Shipment</h1>
+<p>Fast • Secure • Worldwide Delivery</p>
+
+<div class="track-box">
+<input type="text" placeholder="Enter Tracking Number">
+<button>Track Package</button>
+</div>
 
 </section>
 
