@@ -111,7 +111,8 @@ margin-top:50px;
 
 </footer>
 <script>
-
+document.querySelector("button").addEventListener("click", function () {
+  const trackingNumber = document.querySelector("input").value.trim();
 
   if (trackingNumber === "") {
     alert("Please enter your tracking number.");
@@ -123,8 +124,8 @@ if (trackingNumber === "BEL20260001") {
 } else {
     alert("Tracking number not found.");
     document.getElementById("result").style.display = "none";
-  }
-  
+}
+
 });
 </script>
 </body>
