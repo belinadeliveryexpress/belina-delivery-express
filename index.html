@@ -111,16 +111,20 @@ margin-top:50px;
 
 </footer>
 <script>
-document.querySelector("button").addEventListener("click", function () {
-  const trackingNumber = document.querySelector("input").value.trim();
+
 
   if (trackingNumber === "") {
     alert("Please enter your tracking number.");
     return;
   }
-
-  document.getElementById("trackingNo").textContent = trackingNumber;
-document.getElementById("result").style.display = "block";
+if (trackingNumber === "BEL20260001") {
+    document.getElementById("trackingNo").textContent = trackingNumber;
+    document.getElementById("result").style.display = "block";
+} else {
+    alert("Tracking number not found.");
+    document.getElementById("result").style.display = "none";
+  }
+  
 });
 </script>
 </body>
