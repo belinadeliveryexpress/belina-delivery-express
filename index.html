@@ -96,6 +96,44 @@ margin-top:50px;
 <p>© 2026 Belina Delivery Express. All Rights Reserved.</p>
 
 </footer>
+<script>
+document.querySelector("button").addEventListener("click", function () {
+  const trackingNumber = document.querySelector("input").value.trim();
+
+  if (trackingNumber === "") {
+    alert("Please enter your tracking number.");
+    return;
+  }
+
+  alert("Tracking Number: " + trackingNumber + "\n\nYour shipment is currently in transit.");
+});
+</script>
+</body>
+  </html>
+<h2>Belina Delivery Express</h2>
+<p>Professional Worldwide Courier & Logistics</p>
+</header>
+
+<section class="hero">
+<h1>Track Your Shipment</h1>
+<p>Fast • Secure • Worldwide Delivery</p>
+
+<div class="track-box">
+<input type="text" placeholder="Enter Tracking Number">
+<button>Track Package</button>
+</div>
+
+</section>
+
+<footer>
+
+<p>Head Office: London, England</p>
+
+<p>Open 24 Hours • 7 Days a Week</p>
+
+<p>© 2026 Belina Delivery Express. All Rights Reserved.</p>
+
+</footer>
 
 </body>
   </html>
